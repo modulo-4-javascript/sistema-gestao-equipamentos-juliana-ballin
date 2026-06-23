@@ -1,12 +1,17 @@
-import { DashboardPage } from "../features/Dashboard/pages/DashboardPage";
-import { AppLayout } from "../layout/AppLayout";
+import { ConfigProvider } from 'antd'
+import ptBR from 'antd/locale/pt_BR'
+import { BrowserRouter } from 'react-router-dom'
+import { AppRoutes } from './routes'
+import { appTheme } from './theme/appTheme'
 
 function App() {
   return (
-    <AppLayout>
-      <DashboardPage />
-    </AppLayout>
-  );
+    <ConfigProvider locale={ptBR} theme={appTheme}>
+      <BrowserRouter>
+        <AppRoutes />
+      </BrowserRouter>
+    </ConfigProvider>
+  )
 }
 
-export default App;
+export default App

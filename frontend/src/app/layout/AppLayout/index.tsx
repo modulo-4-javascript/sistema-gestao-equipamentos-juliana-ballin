@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react'
-// import { Header } from '../components/Header'
-// import { Sidebar } from '../components/Sidebar'
+import { Header } from '../components/Header'
+import { Sidebar } from '../components/Sidebar'
 import { ContentLayout, MainContent, PageLayout } from './styles'
 
 interface AppLayoutProps {
@@ -8,14 +8,14 @@ interface AppLayoutProps {
   currentPage: string
 }
 
-export function AppLayout({ children }: AppLayoutProps) {
+export function AppLayout({ children, currentPage }: AppLayoutProps) {
   return (
     <PageLayout>
       {/* Sidebar e Header ficam no layout porque aparecem em várias telas. */}
-      {/* <Sidebar /> */}
+      <Sidebar />
 
       <ContentLayout>
-        {/* <Header currentPage={currentPage} /> */}
+        <Header currentPage={currentPage} />
         <MainContent>{children}</MainContent>
       </ContentLayout>
     </PageLayout>
